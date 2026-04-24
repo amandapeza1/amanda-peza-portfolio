@@ -8,155 +8,188 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green:#1B3A2D;--green-mid:#2C5441;
-  --gold:#B8963E;--gold-light:#D4AF6A;
-  --beige:#F6F2EB;--beige-mid:#EDE7DA;
-  --wood:#9B7450;--white:#FDFCF9;
-  --text:#111110;--text-mid:#444440;--text-muted:#888882;
-  --border:#E0D9CC;--radius:14px;--radius-sm:8px;
+  --navy:#0D1B2A;
+  --navy2:#152236;
+  --blue:#1A3A5C;
+  --blue-mid:#1E4D7B;
+  --blue-accent:#2E6DAD;
+  --blue-light:#4A90C4;
+  --blue-pale:#E8F1F9;
+  --blue-faint:#F0F6FC;
+  --white:#FAFCFF;
+  --text:#0D1B2A;
+  --text-mid:#3A4A5C;
+  --text-muted:#7A8FA6;
+  --border:#D0DDE8;
+  --radius:14px;
+  --radius-sm:8px;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--text);font-size:15px;line-height:1.6;overflow-x:hidden}
-::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:99px}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--blue-accent);border-radius:99px}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(253,252,249,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.logo{font-size:15px;font-weight:700;color:var(--green);text-decoration:none}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(250,252,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-size:15px;font-weight:700;color:var(--navy);text-decoration:none}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:12px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color .18s}
-.nav-links a:hover{color:var(--green)}
+.nav-links a:hover{color:var(--blue-mid)}
 
-.hero{min-height:100svh;background:var(--green);padding:7rem 3rem 0;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
-.hero-top{max-width:740px;padding-bottom:3rem}
-.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(184,150,62,.15);color:var(--gold-light);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.4rem 1rem;border-radius:99px;margin-bottom:2.5rem}
-.hero-tag span{width:6px;height:6px;border-radius:50%;background:var(--gold-light);flex-shrink:0}
-.hero h1{font-size:clamp(2.8rem,6vw,5.5rem);font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.02em;margin-bottom:1.5rem}
-.hero h1 em{font-style:normal;color:var(--gold-light)}
-.hero-sub{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.8;max-width:500px;margin-bottom:2.5rem}
+/* HERO */
+.hero{min-height:100svh;background:var(--navy);padding:7rem 3rem 0;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+.hero-inner{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;padding-bottom:3rem}
+.hero-top{max-width:640px}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(46,109,173,.2);color:#7DB8E8;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.4rem 1rem;border-radius:99px;margin-bottom:2.5rem}
+.hero-tag span{width:6px;height:6px;border-radius:50%;background:#7DB8E8;flex-shrink:0}
+.hero h1{font-size:clamp(2.6rem,5.5vw,5rem);font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.02em;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:#7DB8E8}
+.hero-sub{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.45);line-height:1.85;max-width:480px;margin-bottom:2.5rem}
 .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
 .btn{display:inline-block;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.04em;text-decoration:none;border:none;cursor:pointer;transition:all .2s;border-radius:99px;padding:.75rem 1.75rem}
-.btn-solid{background:var(--gold);color:var(--green)}.btn-solid:hover{background:var(--gold-light)}
-.btn-ghost{background:rgba(255,255,255,.08);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.15)}.btn-ghost:hover{background:rgba(255,255,255,.14);color:#fff}
-.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.08)}
-.hstat{padding:1.5rem 1.25rem}
-.hstat-n{font-size:1.8rem;font-weight:700;color:#fff;letter-spacing:-.02em;display:block;line-height:1}
-.hstat-l{font-size:11px;font-weight:400;color:rgba(255,255,255,.35);margin-top:.3rem;line-height:1.4}
+.btn-solid{background:var(--blue-accent);color:#fff}.btn-solid:hover{background:var(--blue-light)}
+.btn-ghost{background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.14)}.btn-ghost:hover{background:rgba(255,255,255,.12);color:#fff}
 
+/* LOGO in hero */
+.hero-logo-wrap{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-logo-wrap img{width:220px;height:auto;object-fit:contain;filter:brightness(0) invert(1) opacity(0.15);transition:opacity .3s}
+.hero-logo-wrap:hover img{opacity:.28}
+
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.07)}
+.hstat{padding:1.5rem 1.25rem}
+.hstat-n{font-size:1.7rem;font-weight:700;color:#fff;letter-spacing:-.02em;display:block;line-height:1}
+.hstat-l{font-size:10px;font-weight:400;color:rgba(255,255,255,.32);margin-top:.3rem;line-height:1.45}
+
+/* SECTIONS */
 section{padding:5rem 3rem}
-.sec-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-.sec-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--green);letter-spacing:-.02em;line-height:1.15;margin-bottom:.75rem}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:.6rem}
+.sec-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--navy);letter-spacing:-.02em;line-height:1.15;margin-bottom:.75rem}
 .sec-sub{font-size:.88rem;color:var(--text-muted);line-height:1.8;max-width:500px;margin-bottom:3rem}
 
+/* ABOUT */
 .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .about-text{font-size:.9rem;color:var(--text-mid);line-height:1.9;font-weight:300}
 .about-text p+p{margin-top:1rem}
 .skills-wrap{display:flex;flex-direction:column;gap:.5rem}
-.skill-item{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:var(--beige);border-radius:var(--radius-sm);gap:1rem}
-.skill-name{font-size:.82rem;font-weight:600;color:var(--green)}
+.skill-item{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:var(--blue-faint);border-radius:var(--radius-sm);gap:1rem;border:1px solid var(--border)}
+.skill-name{font-size:.82rem;font-weight:700;color:var(--navy)}
 .skill-chips{display:flex;gap:.35rem;flex-wrap:wrap;justify-content:flex-end}
-.chip{font-size:10px;font-weight:500;color:var(--wood);background:var(--white);border:1px solid var(--border);padding:.2rem .6rem;border-radius:99px}
+.chip{font-size:10px;font-weight:500;color:var(--blue-mid);background:var(--white);border:1px solid var(--border);padding:.2rem .6rem;border-radius:99px}
 
-.work-bg{background:var(--beige)}
+/* WORK */
+.work-bg{background:var(--blue-faint)}
 .filter-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
 .fbtn{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.04em;padding:.5rem 1.1rem;border-radius:99px;border:1.5px solid var(--border);background:transparent;color:var(--text-muted);cursor:pointer;transition:all .18s}
-.fbtn.on,.fbtn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.fbtn.on,.fbtn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
 .cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
 
+/* CARD */
 .pcard{background:var(--white);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
-.pcard:hover{box-shadow:0 12px 40px rgba(27,58,45,.1);transform:translateY(-3px)}
+.pcard:hover{box-shadow:0 12px 40px rgba(13,27,42,.1);transform:translateY(-3px)}
 .pcard.gone{display:none}
-.pcard-cover{height:280px;overflow:hidden;position:relative;background:var(--beige-mid);cursor:pointer;flex-shrink:0}
+.pcard-cover{height:280px;overflow:hidden;position:relative;background:var(--blue-pale);cursor:pointer;flex-shrink:0}
 .pcard-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block}
 .pcard:hover .pcard-cover img{transform:scale(1.04)}
-.pcard-badge{position:absolute;top:.9rem;left:.9rem;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--green);color:var(--gold-light);padding:.3rem .75rem;border-radius:99px}
-.pcard-body{padding:1.5rem 1.75rem 1.75rem;display:flex;flex-direction:column;gap:1.1rem}
-.pcard-meta{display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
-.pcard-handle{font-size:11px;font-weight:600;color:var(--gold);text-decoration:none;transition:color .18s}
-.pcard-handle:hover{color:var(--green)}
-.pcard-period{font-size:10px;font-weight:500;color:var(--text-muted);background:var(--beige);padding:.25rem .65rem;border-radius:99px}
-.pcard-title{font-size:1.1rem;font-weight:700;color:var(--green);letter-spacing:-.01em;line-height:1.25}
+.pcard-badge{position:absolute;top:.9rem;left:.9rem;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--navy);color:#7DB8E8;padding:.3rem .75rem;border-radius:99px}
+
+/* HANDLE — more visible */
+.pcard-handle-wrap{display:flex;align-items:center;gap:.5rem;background:var(--blue-faint);border:1.5px solid var(--blue-accent);border-radius:99px;padding:.45rem 1rem;width:fit-content;transition:background .18s,border-color .18s}
+.pcard-handle-wrap:hover{background:var(--blue-accent);border-color:var(--blue-accent)}
+.pcard-handle-wrap:hover .pcard-handle{color:#fff}
+.pcard-handle-wrap:hover .pcard-ig-icon{filter:brightness(10)}
+.pcard-ig-icon{width:14px;height:14px;flex-shrink:0;opacity:.7}
+.pcard-handle{font-size:11px;font-weight:700;color:var(--blue-mid);text-decoration:none;letter-spacing:.02em}
+
+.pcard-body{padding:1.5rem 1.75rem 1.75rem;display:flex;flex-direction:column;gap:1rem}
+.pcard-meta{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+.pcard-period{font-size:10px;font-weight:500;color:var(--text-muted);background:var(--blue-faint);padding:.25rem .65rem;border-radius:99px;border:1px solid var(--border)}
+.pcard-title{font-size:1.1rem;font-weight:700;color:var(--navy);letter-spacing:-.01em;line-height:1.25}
 .pcard-desc{font-size:.83rem;color:var(--text-mid);line-height:1.75;font-weight:300}
 
 .deliverables{border-top:1px solid var(--border);padding-top:1rem;display:flex;flex-direction:column;gap:.4rem}
 .deliv-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.15rem}
-.deliv-row{display:flex;align-items:flex-start;gap:.6rem;font-size:.79rem;color:var(--text-mid);line-height:1.5}
-.deliv-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.45em}
+.deliv-row{display:flex;align-items:flex-start;gap:.6rem;font-size:.79rem;color:var(--text-mid);line-height:1.55}
+.deliv-dot{width:5px;height:5px;border-radius:50%;background:var(--blue-accent);flex-shrink:0;margin-top:.45em}
 
 .feed-section{border-top:1px solid var(--border);padding-top:1rem}
 .feed-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.6rem}
 .feed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
-.fthumb{aspect-ratio:1;overflow:hidden;border-radius:var(--radius-sm);background:var(--beige-mid);cursor:pointer;position:relative}
+.fthumb{aspect-ratio:1;overflow:hidden;border-radius:var(--radius-sm);background:var(--blue-pale);cursor:pointer;position:relative}
 .fthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
 .fthumb:hover img{transform:scale(1.07)}
-.fthumb-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(27,58,45,.4)}
+.fthumb-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(13,27,42,.45)}
 .fthumb-play svg{width:20px;height:20px;fill:#fff}
 
-.exp-bg{background:var(--green)}
+/* EXPERIENCE */
+.exp-bg{background:var(--navy)}
 .exp-grid{display:flex;flex-direction:column;gap:1.25rem}
-.emp-block{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);overflow:hidden}
-.emp-head{padding:1.25rem 1.75rem;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.emp-block{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden}
+.emp-head{padding:1.25rem 1.75rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .emp-name{font-size:1rem;font-weight:700;color:#fff}
-.emp-tag{font-size:10px;font-weight:600;color:var(--gold-light);background:rgba(184,150,62,.12);padding:.3rem .75rem;border-radius:99px;letter-spacing:.04em;text-transform:uppercase}
+.emp-tag{font-size:10px;font-weight:600;color:#7DB8E8;background:rgba(46,109,173,.15);padding:.3rem .75rem;border-radius:99px;letter-spacing:.04em;text-transform:uppercase}
 .roles-wrap{display:grid;grid-template-columns:1fr 1fr}
-.role-cell{padding:1.4rem 1.75rem;border-right:1px solid rgba(255,255,255,.06)}
+.role-cell{padding:1.4rem 1.75rem;border-right:1px solid rgba(255,255,255,.05)}
 .role-cell:last-child{border-right:none}
-.role-date{font-size:10px;font-weight:600;color:var(--gold-light);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.35rem}
+.role-date{font-size:10px;font-weight:600;color:#7DB8E8;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.35rem}
 .role-title{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.5rem}
-.role-desc{font-size:.77rem;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300}
-
-.exp-item{padding:1.4rem 1.75rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius)}
+.role-desc{font-size:.77rem;color:rgba(255,255,255,.42);line-height:1.75;font-weight:300}
+.exp-item{padding:1.4rem 1.75rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius)}
 .exp-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;margin-bottom:.4rem;flex-wrap:wrap}
 .exp-role{font-size:.92rem;font-weight:700;color:#fff}
-.exp-date{font-size:10px;font-weight:600;color:var(--gold-light);background:rgba(184,150,62,.12);padding:.28rem .7rem;border-radius:99px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
-.exp-org{font-size:.77rem;color:rgba(255,255,255,.4);margin-bottom:.55rem}
-.exp-desc{font-size:.77rem;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300}
+.exp-date{font-size:10px;font-weight:600;color:#7DB8E8;background:rgba(46,109,173,.15);padding:.28rem .7rem;border-radius:99px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.exp-org{font-size:.77rem;color:rgba(255,255,255,.38);margin-bottom:.55rem}
+.exp-desc{font-size:.77rem;color:rgba(255,255,255,.42);line-height:1.75;font-weight:300}
 
+/* CV */
 .cv-shell{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
-.cv-bar{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;background:var(--beige-mid);border-bottom:1px solid var(--border)}
+.cv-bar{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;background:var(--blue-pale);border-bottom:1px solid var(--border)}
 .cv-dots{display:flex;gap:.4rem}
 .cvd{width:10px;height:10px;border-radius:50%}
 .cv-lock{display:flex;align-items:center;gap:.4rem;font-size:11px;color:var(--text-muted);font-weight:500}
 .cv-inner{padding:2.5rem 3rem;user-select:none;-webkit-user-select:none;pointer-events:none}
-.cv-name{font-size:1.6rem;font-weight:700;color:var(--green);letter-spacing:-.02em;margin-bottom:.3rem}
-.cv-sub{font-size:.79rem;color:var(--text-muted);line-height:1.7;max-width:480px;margin-bottom:1.1rem;font-weight:300}
+.cv-name{font-size:1.6rem;font-weight:700;color:var(--navy);letter-spacing:-.02em;margin-bottom:.9rem}
 .cv-contacts{display:flex;flex-wrap:wrap;gap:.3rem 1.25rem;margin-bottom:1.5rem}
 .cv-contacts span{font-size:.72rem;color:var(--text-muted)}
 .cv-rule{height:1px;background:var(--border);margin:1.25rem 0}
-.cv-sec{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
+.cv-sec{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
 .cv-sec::after{content:'';flex:1;height:1px;background:var(--border)}
 .cve{margin-bottom:1rem}
-.cve-title{font-size:.83rem;font-weight:700;color:var(--green)}
-.cve-org{font-size:.73rem;color:var(--gold);margin:.1rem 0}
+.cve-title{font-size:.83rem;font-weight:700;color:var(--navy)}
+.cve-org{font-size:.73rem;color:var(--blue-accent);margin:.1rem 0}
 .cve-date{font-size:.69rem;color:var(--text-muted);margin-bottom:.28rem}
 .cve-desc{font-size:.73rem;color:var(--text-muted);line-height:1.7;font-weight:300}
 .cv-chips{display:flex;flex-wrap:wrap;gap:.3rem}
-.cvc{font-size:.69rem;border:1px solid var(--border);padding:.18rem .55rem;border-radius:99px;color:var(--text-mid);background:var(--beige)}
-.cv-foot{text-align:center;padding:.6rem;background:var(--beige);border-top:1px solid var(--border);font-size:.71rem;color:var(--text-muted);letter-spacing:.04em}
+.cvc{font-size:.69rem;border:1px solid var(--border);padding:.18rem .55rem;border-radius:99px;color:var(--text-mid);background:var(--blue-faint)}
+.cv-foot{text-align:center;padding:.6rem;background:var(--blue-faint);border-top:1px solid var(--border);font-size:.71rem;color:var(--text-muted);letter-spacing:.04em}
 
-.contact-bg{background:var(--green)}
+/* CONTACT */
+.contact-bg{background:var(--navy)}
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .contact-h{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.1;margin-bottom:.75rem}
-.contact-h em{font-style:normal;color:var(--gold-light)}
-.contact-sub{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.85;font-weight:300;max-width:360px}
+.contact-h em{font-style:normal;color:#7DB8E8}
+.contact-sub{font-size:.85rem;color:rgba(255,255,255,.38);line-height:1.85;font-weight:300;max-width:360px}
 .contact-items{display:flex;flex-direction:column;gap:.75rem}
 .contact-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-sm);padding:.9rem 1.2rem}
-.contact-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.25rem}
-.contact-val{font-size:.84rem;color:rgba(255,255,255,.72);text-decoration:none;transition:color .18s;font-weight:400;display:block}
-.contact-val:hover{color:var(--gold-light)}
+.contact-lbl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.25rem}
+.contact-val{font-size:.84rem;color:rgba(255,255,255,.7);text-decoration:none;transition:color .18s;font-weight:400;display:block}
+.contact-val:hover{color:#7DB8E8}
 
-footer{padding:1.5rem 3rem;background:var(--green);border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between}
-footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
+footer{padding:1.5rem 3rem;background:var(--navy);border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between}
+footer p{font-size:.71rem;color:rgba(255,255,255,.18);letter-spacing:.04em}
 
-.lb{display:none;position:fixed;inset:0;z-index:500;background:rgba(5,12,8,.95);align-items:center;justify-content:center;padding:2rem}
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;z-index:500;background:rgba(5,10,18,.95);align-items:center;justify-content:center;padding:2rem}
 .lb.open{display:flex}
 .lb-box{position:relative;max-width:960px;width:100%}
-.lb-box img,.lb-box video{max-width:100%;max-height:82vh;object-fit:contain;display:block;margin:0 auto;border-radius:var(--radius-sm)}
+.lb-box img{max-width:100%;max-height:82vh;object-fit:contain;display:block;margin:0 auto;border-radius:var(--radius-sm)}
+.lb-box iframe{width:100%;height:70vh;border:none;border-radius:var(--radius-sm);display:block}
 .lb-x{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(255,255,255,.5);font-size:1.4rem;cursor:pointer;transition:color .18s;font-family:inherit}
-.lb-x:hover{color:var(--gold-light)}
-.lb-cap{text-align:center;margin-top:.75rem;font-size:.75rem;color:rgba(255,255,255,.3);letter-spacing:.05em}
-.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.65);width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .18s;font-size:.9rem;border-radius:50%}
-.lb-nav:hover{background:rgba(184,150,62,.25);color:var(--gold-light)}
+.lb-x:hover{color:#7DB8E8}
+.lb-cap{text-align:center;margin-top:.75rem;font-size:.75rem;color:rgba(255,255,255,.28);letter-spacing:.05em}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .18s;font-size:.9rem;border-radius:50%}
+.lb-nav:hover{background:rgba(46,109,173,.35);color:#7DB8E8}
 #lbPrev{left:-3.5rem}#lbNext{right:-3.5rem}
 
+/* ANIMATIONS */
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .fi{opacity:0;animation:up .7s ease forwards}
 .d1{animation-delay:.08s}.d2{animation-delay:.2s}.d3{animation-delay:.33s}.d4{animation-delay:.46s}
@@ -164,11 +197,12 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
 @media(max-width:900px){
   nav{padding:.9rem 1.5rem}.nav-links{gap:1.2rem}
   section{padding:4rem 1.5rem}.hero{padding:6rem 1.5rem 0}
+  .hero-inner{grid-template-columns:1fr}.hero-logo-wrap{display:none}
   .hero-stats{grid-template-columns:1fr 1fr}
   .about-wrap{grid-template-columns:1fr;gap:2.5rem}
   .cards-grid{grid-template-columns:1fr}
   .roles-wrap{grid-template-columns:1fr}
-  .role-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+  .role-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.05)}
   .contact-wrap{grid-template-columns:1fr;gap:2.5rem}
   .cv-inner{padding:1.75rem 1.5rem}
   footer{flex-direction:column;gap:.3rem}
@@ -188,49 +222,57 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-top">
-    <div class="hero-tag fi"><span></span>Social Media · Content · Design</div>
-    <h1 class="fi d1">Content with<br><em>purpose</em> and<br>real results.</h1>
-    <p class="hero-sub fi d2">Based in Tirana. I plan, create, and manage digital content for brands — from strategy to final post. Social media management, video editing, graphic design, brand communication.</p>
-    <div class="hero-btns fi d3">
-      <a class="btn btn-solid" href="#work">See my work</a>
-      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="hero-tag fi"><span></span>Social Media · Content · Design</div>
+      <h1 class="fi d1">Content with<br><em>purpose</em> and<br>real results.</h1>
+      <p class="hero-sub fi d2">Based in Tirana. I plan, create, and manage digital content for brands — from strategy to final post. Social media management, video editing, graphic design, brand communication.</p>
+      <div class="hero-btns fi d3">
+        <a class="btn btn-solid" href="#work">See my work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-logo-wrap fi d4">
+      <img src="https://drive.google.com/thumbnail?id=1e5UEN2Sebt4CNMlAum92SEcLWgpitC8t&sz=w800" alt="Amanda Peza logo">
     </div>
   </div>
-  <div class="hero-stats fi d4">
+  <div class="hero-stats">
     <div class="hstat"><span class="hstat-n">12+</span><span class="hstat-l">Brands & clients</span></div>
     <div class="hstat"><span class="hstat-n">3+</span><span class="hstat-l">Years experience</span></div>
     <div class="hstat"><span class="hstat-n">×4</span><span class="hstat-l">Organic growth @auto.peza</span></div>
-    <div class="hstat"><span class="hstat-n">500+</span><span class="hstat-l">DevFest attendees</span></div>
+    <div class="hstat"><span class="hstat-n">500+</span><span class="hstat-l">DevFest event attendees</span></div>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="about-wrap">
     <div>
       <p class="sec-label">About</p>
       <h2 class="sec-title">Strategy first,<br>visuals second.</h2>
       <div class="about-text">
-        <p>I'm a Social Media Manager and Visual Designer based in Tirana. I've worked with NGOs, investment firms, restaurants, auto brands, and small businesses — each with different goals and starting points.</p>
-        <p>My background in Business Informatics means I approach content with both a creative and analytical mindset. I care about building a coherent brand presence, not just filling a posting schedule.</p>
-        <p>I've managed accounts from scratch, built brand guidelines, handled full event communication cycles, and grown audiences through video content. I work well independently and as part of a team.</p>
+        <p>I'm based in Tirana and I work in social media management, content creation, and graphic design. My experience covers different types of clients — NGOs, small businesses, a student tech club, an investment firm, restaurants, and more.</p>
+        <p>I studied Business Informatics, which helps me think about content in a structured way — planning ahead, tracking what works, and adjusting. I like having a clear reason behind what I post, not just a schedule to fill.</p>
+        <p>I've set up accounts from zero, put together brand guidelines, helped with events from start to finish, and made video reels that grew an account organically. I'm comfortable working on my own or as part of a team.</p>
       </div>
     </div>
     <div>
       <p class="sec-label">Skills</p>
       <div class="skills-wrap">
-        <div class="skill-item"><span class="skill-name">Social Media Management</span><div class="skill-chips"><span class="chip">Instagram</span><span class="chip">LinkedIn</span><span class="chip">Facebook</span></div></div>
-        <div class="skill-item"><span class="skill-name">Video Editing & Reels</span><div class="skill-chips"><span class="chip">Short-form</span><span class="chip">Event recap</span></div></div>
+        <div class="skill-item"><span class="skill-name">Social Media Management</span><div class="skill-chips"><span class="chip">Instagram</span><span class="chip">LinkedIn</span><span class="chip">Facebook</span><span class="chip">WhatsApp</span><span class="chip">Website</span></div></div>
+        <div class="skill-item"><span class="skill-name">Video Editing & Reels</span><div class="skill-chips"><span class="chip">Illustrative</span><span class="chip">Product</span><span class="chip">Service</span><span class="chip">Promotional</span><span class="chip">Event</span></div></div>
         <div class="skill-item"><span class="skill-name">Graphic Design</span><div class="skill-chips"><span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">Canva</span></div></div>
         <div class="skill-item"><span class="skill-name">Brand Identity</span><div class="skill-chips"><span class="chip">Guidelines</span><span class="chip">Logo</span><span class="chip">Templates</span></div></div>
         <div class="skill-item"><span class="skill-name">Content Strategy</span><div class="skill-chips"><span class="chip">Planning</span><span class="chip">Copywriting</span><span class="chip">Analytics</span></div></div>
-        <div class="skill-item"><span class="skill-name">Event Communication</span><div class="skill-chips"><span class="chip">Pre/during/post</span><span class="chip">Donor reports</span></div></div>
+        <div class="skill-item"><span class="skill-name">Event Communication</span><div class="skill-chips"><span class="chip">Pre-event</span><span class="chip">During</span><span class="chip">Post-event</span><span class="chip">Full assistance</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- WORK -->
 <section id="work" class="work-bg">
   <p class="sec-label">Work</p>
   <h2 class="sec-title">Selected projects.</h2>
@@ -246,32 +288,36 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
 
     <!-- BRAIN NEST -->
     <div class="pcard" data-cat="social"
-      data-gal='["https://lh3.googleusercontent.com/d/1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD","https://lh3.googleusercontent.com/d/11uO7IxJWlZzBtj5H7MImzRn2CdFaXjtI","https://lh3.googleusercontent.com/d/1ZyGWxFnJum_Z-c9TFS3MsoFb55Y5Yh4Z","https://lh3.googleusercontent.com/d/1gQCIJTNbJxEupZOKUnHVFY1FgYGtHraQ","https://lh3.googleusercontent.com/d/1fozfh2FBO-0ylaEYn68mR3g1gaDizfPJ","https://lh3.googleusercontent.com/d/12G4LfEfHjDm0XCU1_1WvmNHAtAIJlem1"]'
+      data-gal='["https://drive.google.com/thumbnail?id=1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD&sz=w800","https://drive.google.com/thumbnail?id=11uO7IxJWlZzBtj5H7MImzRn2CdFaXjtI&sz=w800","https://drive.google.com/thumbnail?id=1ZyGWxFnJum_Z-c9TFS3MsoFb55Y5Yh4Z&sz=w800","https://drive.google.com/thumbnail?id=1gQCIJTNbJxEupZOKUnHVFY1FgYGtHraQ&sz=w800","https://drive.google.com/thumbnail?id=1fozfh2FBO-0ylaEYn68mR3g1gaDizfPJ&sz=w800","https://drive.google.com/thumbnail?id=12G4LfEfHjDm0XCU1_1WvmNHAtAIJlem1&sz=w800"]'
       data-cap="Brain Nest Institute — social media content">
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD" alt="" loading="lazy"><span class="pcard-badge">Social Media</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Social Media</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/brain_nest_institute" target="_blank">@brain_nest_institute ↗</a><span class="pcard-period">Apr 2025 – Apr 2026</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/brain_nest_institute" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@brain_nest_institute</span>
+          </a>
+          <span class="pcard-period">Apr 2025 – Apr 2026</span>
+        </div>
         <p class="pcard-title">Brain Nest Institute</p>
-        <p class="pcard-desc">Full social media management across Instagram, LinkedIn, Facebook, WhatsApp, and website. Built the brand guideline from scratch, managed content strategy, campaign cycles, event communication, and delivered analytics reports for donors.</p>
+        <p class="pcard-desc">Full social media management across Instagram, LinkedIn, Facebook, WhatsApp, and website. Built the brand guideline from scratch, managed content strategy, campaign cycles, and event communication end to end.</p>
         <div class="deliverables">
           <p class="deliv-label">What I did</p>
           <div class="deliv-row"><span class="deliv-dot"></span>Created and managed full brand guideline</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Content strategy across all channels (IG, LinkedIn, FB, WhatsApp, web)</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Campaign planning and execution for trainings, academies, project launches</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Event communication: pre-event, during, and post-event</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Stationery, posters, invitations, and branded materials design</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Donor-facing analytics reports at end of each campaign</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Guest coordination and post-event follow-up</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Content strategy across all channels — IG, LinkedIn, FB, WhatsApp, web</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Campaign planning and execution for trainings, academies, and project launches</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Full event assistance: pre-event promotion and visuals, branded stationery, invitations and posters, on-site support during events, post-event publications, follow-up emails and messages to guests</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Analytics reporting at campaign close</div>
         </div>
         <div class="feed-section">
-          <p class="feed-label">Work samples</p>
+          <p class="feed-label">Work samples — click to enlarge</p>
           <div class="feed-grid">
-            <div class="fthumb" data-idx="0"><img src="https://lh3.googleusercontent.com/d/1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="1"><img src="https://lh3.googleusercontent.com/d/11uO7IxJWlZzBtj5H7MImzRn2CdFaXjtI" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="2"><img src="https://lh3.googleusercontent.com/d/1ZyGWxFnJum_Z-c9TFS3MsoFb55Y5Yh4Z" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="3"><img src="https://lh3.googleusercontent.com/d/1gQCIJTNbJxEupZOKUnHVFY1FgYGtHraQ" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="4"><img src="https://lh3.googleusercontent.com/d/1fozfh2FBO-0ylaEYn68mR3g1gaDizfPJ" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="5"><img src="https://lh3.googleusercontent.com/d/12G4LfEfHjDm0XCU1_1WvmNHAtAIJlem1" alt="" loading="lazy"></div>
+            <div class="fthumb" data-idx="0"><img src="https://drive.google.com/thumbnail?id=1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="1"><img src="https://drive.google.com/thumbnail?id=11uO7IxJWlZzBtj5H7MImzRn2CdFaXjtI&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="2"><img src="https://drive.google.com/thumbnail?id=1ZyGWxFnJum_Z-c9TFS3MsoFb55Y5Yh4Z&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="3"><img src="https://drive.google.com/thumbnail?id=1gQCIJTNbJxEupZOKUnHVFY1FgYGtHraQ&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="4"><img src="https://drive.google.com/thumbnail?id=1fozfh2FBO-0ylaEYn68mR3g1gaDizfPJ&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="5"><img src="https://drive.google.com/thumbnail?id=12G4LfEfHjDm0XCU1_1WvmNHAtAIJlem1&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
           </div>
         </div>
       </div>
@@ -279,30 +325,36 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
 
     <!-- EAGLE INVEST -->
     <div class="pcard" data-cat="social"
-      data-gal='["https://lh3.googleusercontent.com/d/1mqbu0-UUUPpWVAOFffVNU2VymFnDkV8I","https://lh3.googleusercontent.com/d/1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL","https://lh3.googleusercontent.com/d/1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF","https://lh3.googleusercontent.com/d/1bAsxbAiDlwAgk9b9qIe1O88yJZh5m1wt","https://lh3.googleusercontent.com/d/1wY4u4fQkVNhTEJpIflgHm3HeWUA4bqZZ","https://lh3.googleusercontent.com/d/1vIvu2WLpDW9JKU-zRXnmpWLwTmf8XOzS"]'
+      data-gal='["https://drive.google.com/thumbnail?id=1mqbu0-UUUPpWVAOFffVNU2VymFnDkV8I&sz=w800","https://drive.google.com/thumbnail?id=1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL&sz=w800","https://drive.google.com/thumbnail?id=1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF&sz=w800","https://drive.google.com/thumbnail?id=1bAsxbAiDlwAgk9b9qIe1O88yJZh5m1wt&sz=w800","https://drive.google.com/thumbnail?id=1wY4u4fQkVNhTEJpIflgHm3HeWUA4bqZZ&sz=w800","https://drive.google.com/thumbnail?id=1vIvu2WLpDW9JKU-zRXnmpWLwTmf8XOzS&sz=w800"]'
       data-cap="Eagle Invest — social content">
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1mqbu0-UUUPpWVAOFffVNU2VymFnDkV8I" alt="" loading="lazy"><span class="pcard-badge">Social Media</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1mqbu0-UUUPpWVAOFffVNU2VymFnDkV8I&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Social Media</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/eagleinvest.al" target="_blank">@eagleinvest.al ↗</a><span class="pcard-period">Jun – Nov 2024</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/eagleinvest.al" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@eagleinvest.al</span>
+          </a>
+          <span class="pcard-period">Freelance · Jun – Nov 2024</span>
+        </div>
         <p class="pcard-title">Eagle Invest</p>
-        <p class="pcard-desc">Managed the early-stage social media presence for an investment firm — establishing visual identity, tone of voice, and the first content foundation from zero.</p>
+        <p class="pcard-desc">Set up and managed the social media presence for an investment firm starting from zero — establishing visual identity, tone of voice, and the first content foundation.</p>
         <div class="deliverables">
           <p class="deliv-label">What I did</p>
           <div class="deliv-row"><span class="deliv-dot"></span>Visual content creation and photo editing</div>
           <div class="deliv-row"><span class="deliv-dot"></span>Caption writing and content ideation</div>
           <div class="deliv-row"><span class="deliv-dot"></span>Story highlights design and structure</div>
           <div class="deliv-row"><span class="deliv-dot"></span>Service-focused story content</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Established initial brand tone and content roots</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Established initial brand tone and content foundation</div>
         </div>
         <div class="feed-section">
-          <p class="feed-label">Work samples</p>
+          <p class="feed-label">Work samples — click to enlarge</p>
           <div class="feed-grid">
-            <div class="fthumb" data-idx="0"><img src="https://lh3.googleusercontent.com/d/1mqbu0-UUUPpWVAOFffVNU2VymFnDkV8I" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="1"><img src="https://lh3.googleusercontent.com/d/1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="2"><img src="https://lh3.googleusercontent.com/d/1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="3"><img src="https://lh3.googleusercontent.com/d/1bAsxbAiDlwAgk9b9qIe1O88yJZh5m1wt" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="4"><img src="https://lh3.googleusercontent.com/d/1wY4u4fQkVNhTEJpIflgHm3HeWUA4bqZZ" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="5"><img src="https://lh3.googleusercontent.com/d/1vIvu2WLpDW9JKU-zRXnmpWLwTmf8XOzS" alt="" loading="lazy"></div>
+            <div class="fthumb" data-idx="0"><img src="https://drive.google.com/thumbnail?id=1mqbu0-UUUPpWVAOFffVNU2VymFnDkV8I&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="1"><img src="https://drive.google.com/thumbnail?id=1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="2"><img src="https://drive.google.com/thumbnail?id=1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="3"><img src="https://drive.google.com/thumbnail?id=1bAsxbAiDlwAgk9b9qIe1O88yJZh5m1wt&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="4"><img src="https://drive.google.com/thumbnail?id=1wY4u4fQkVNhTEJpIflgHm3HeWUA4bqZZ&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="5"><img src="https://drive.google.com/thumbnail?id=1vIvu2WLpDW9JKU-zRXnmpWLwTmf8XOzS&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
           </div>
         </div>
       </div>
@@ -310,32 +362,37 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
 
     <!-- GDSC -->
     <div class="pcard" data-cat="social"
-      data-gal='["https://lh3.googleusercontent.com/d/1IxDNcAMLuGs3ktHJAGZpu7uAixkQIOW-","https://lh3.googleusercontent.com/d/1zOELU09QLEwk1FPD0T2HJGQTL7n9D75W","https://lh3.googleusercontent.com/d/1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD","https://lh3.googleusercontent.com/d/11uO7IxJWlZzBtj5H7MImzRn2CdFaXjtI","https://lh3.googleusercontent.com/d/1ZyGWxFnJum_Z-c9TFS3MsoFb55Y5Yh4Z","https://lh3.googleusercontent.com/d/1gQCIJTNbJxEupZOKUnHVFY1FgYGtHraQ"]'
+      data-gal='["https://drive.google.com/thumbnail?id=1IxDNcAMLuGs3ktHJAGZpu7uAixkQIOW-&sz=w800","https://drive.google.com/thumbnail?id=1zOELU09QLEwk1FPD0T2HJGQTL7n9D75W&sz=w800","https://drive.google.com/thumbnail?id=1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD&sz=w800","https://drive.google.com/thumbnail?id=11uO7IxJWlZzBtj5H7MImzRn2CdFaXjtI&sz=w800","https://drive.google.com/thumbnail?id=1ZyGWxFnJum_Z-c9TFS3MsoFb55Y5Yh4Z&sz=w800","https://drive.google.com/thumbnail?id=1gQCIJTNbJxEupZOKUnHVFY1FgYGtHraQ&sz=w800"]'
       data-cap="GDSC Epoka — full social media management">
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1IxDNcAMLuGs3ktHJAGZpu7uAixkQIOW-" alt="" loading="lazy"><span class="pcard-badge">Social Media · Volunteer</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1IxDNcAMLuGs3ktHJAGZpu7uAixkQIOW-&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Social Media · Volunteer</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/gdsc.epoka" target="_blank">@gdsc.epoka ↗</a><span class="pcard-period">Nov 2022 – Jul 2024</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/gdsc.epoka" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@gdsc.epoka</span>
+          </a>
+          <span class="pcard-period">Nov 2022 – Jul 2024</span>
+        </div>
         <p class="pcard-title">Google Developer Student Club — Epoka</p>
         <p class="pcard-desc">Joined as Marketing & Operations Manager, promoted to GDSC Lead the following year. Managed full social presence, organized all events, and co-organized Albania's first DevFest.</p>
         <div class="deliverables">
           <p class="deliv-label">What I did</p>
-          <div class="deliv-row"><span class="deliv-dot"></span>Full management of Instagram, LinkedIn, Google DSC platform</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Full management of Instagram, LinkedIn, and Google DSC platform</div>
           <div class="deliv-row"><span class="deliv-dot"></span>Content ideation, design, and scheduling</div>
           <div class="deliv-row"><span class="deliv-dot"></span>Organized and assisted all events during mandate</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Post-event reporting submitted to Google</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Co-organized first DevFest Albania — ~500 attendees, 2 Google speakers</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>Promoted to GDSC Lead — team coordination and partnerships</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Co-organized first DevFest Albania — 2 international speakers from Google, 5+ Albanian tech experts, cooperation with Municipality of Tirana, Epoka University, and other institutions</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Promoted to GDSC Lead — team coordination and external partnerships</div>
           <div class="deliv-row"><span class="deliv-dot"></span>Epoka University event poster design</div>
         </div>
         <div class="feed-section">
-          <p class="feed-label">Work samples</p>
+          <p class="feed-label">Work samples — click to enlarge</p>
           <div class="feed-grid">
-            <div class="fthumb" data-idx="0"><img src="https://lh3.googleusercontent.com/d/1IxDNcAMLuGs3ktHJAGZpu7uAixkQIOW-" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="1"><img src="https://lh3.googleusercontent.com/d/1zOELU09QLEwk1FPD0T2HJGQTL7n9D75W" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="2"><img src="https://lh3.googleusercontent.com/d/1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="3"><img src="https://lh3.googleusercontent.com/d/11uO7IxJWlZzBtj5H7MImzRn2CdFaXjtI" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="4"><img src="https://lh3.googleusercontent.com/d/1ZyGWxFnJum_Z-c9TFS3MsoFb55Y5Yh4Z" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="5"><img src="https://lh3.googleusercontent.com/d/1gQCIJTNbJxEupZOKUnHVFY1FgYGtHraQ" alt="" loading="lazy"></div>
+            <div class="fthumb" data-idx="0"><img src="https://drive.google.com/thumbnail?id=1IxDNcAMLuGs3ktHJAGZpu7uAixkQIOW-&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="1"><img src="https://drive.google.com/thumbnail?id=1zOELU09QLEwk1FPD0T2HJGQTL7n9D75W&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="2"><img src="https://drive.google.com/thumbnail?id=1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="3"><img src="https://drive.google.com/thumbnail?id=11uO7IxJWlZzBtj5H7MImzRn2CdFaXjtI&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="4"><img src="https://drive.google.com/thumbnail?id=1ZyGWxFnJum_Z-c9TFS3MsoFb55Y5Yh4Z&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="5"><img src="https://drive.google.com/thumbnail?id=1gQCIJTNbJxEupZOKUnHVFY1FgYGtHraQ&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
           </div>
         </div>
       </div>
@@ -343,25 +400,31 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
 
     <!-- AUTO PEZA -->
     <div class="pcard" data-cat="video"
-      data-gal='["https://lh3.googleusercontent.com/d/1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF"]'
+      data-gal='["https://drive.google.com/thumbnail?id=1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF&sz=w800"]'
       data-cap="Auto Peza — video reels"
       data-isvid="true" data-vids='["1WveX1DgrmTIhYQzwRUe9r0pkB7h9pL-k","1MR4CGL-bjtJnmGAOOYmq"]'>
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF" alt="" loading="lazy"><span class="pcard-badge">Video Reels</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Video Reels</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/auto.peza" target="_blank">@auto.peza ↗</a><span class="pcard-period">Short-term project</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/auto.peza" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@auto.peza</span>
+          </a>
+          <span class="pcard-period">Short-term project</span>
+        </div>
         <p class="pcard-title">Auto Peza — Reels & Organic Growth</p>
-        <p class="pcard-desc">Created and edited video reels for an auto brand. The account grew from ~300 to ~1,300 followers organically within a few months — driven entirely by short-form video content.</p>
+        <p class="pcard-desc">Created and edited video reels for an auto brand. The account grew from around 300 to 1,300 followers organically within a few months, driven entirely by short-form video content.</p>
         <div class="deliverables">
           <p class="deliv-label">What I did</p>
-          <div class="deliv-row"><span class="deliv-dot"></span>Video concept, filming direction, and editing</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Video concept and editing</div>
           <div class="deliv-row"><span class="deliv-dot"></span>Short-form reels optimized for Instagram</div>
           <div class="deliv-row"><span class="deliv-dot"></span>Grew account ×4 organically through video content</div>
         </div>
         <div class="feed-section">
           <p class="feed-label">Work samples — click to play</p>
           <div class="feed-grid">
-            <div class="fthumb" data-isvid="true" data-vid="1WveX1DgrmTIhYQzwRUe9r0pkB7h9pL-k"><img src="https://lh3.googleusercontent.com/d/1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF" alt="" loading="lazy"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-            <div class="fthumb" data-isvid="true" data-vid="1MR4CGL-bjtJnmGAOOYmq"><img src="https://lh3.googleusercontent.com/d/1bAsxbAiDlwAgk9b9qIe1O88yJZh5m1wt" alt="" loading="lazy"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="fthumb" data-isvid="true" data-vid="1WveX1DgrmTIhYQzwRUe9r0pkB7h9pL-k"><img src="https://drive.google.com/thumbnail?id=1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="fthumb" data-isvid="true" data-vid="1MR4CGL-bjtJnmGAOOYmq"><img src="https://drive.google.com/thumbnail?id=1bAsxbAiDlwAgk9b9qIe1O88yJZh5m1wt&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
           </div>
         </div>
       </div>
@@ -371,21 +434,27 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
     <div class="pcard" data-cat="video"
       data-gal='[]' data-cap="Bio Vajra — video reels"
       data-isvid="true" data-vids='["1x_JfLeec6F5hWJNlYW7QONGoIPNl2RTr","1OqGCKQZNIX7OK1KB9K-RvcFiVD_xvgml"]'>
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1bAsxbAiDlwAgk9b9qIe1O88yJZh5m1wt" alt="" loading="lazy"><span class="pcard-badge">Video Reels</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1bAsxbAiDlwAgk9b9qIe1O88yJZh5m1wt&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Video Reels</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/bio_vajra" target="_blank">@bio_vajra ↗</a><span class="pcard-period">Freelance</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/bio_vajra" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@bio_vajra</span>
+          </a>
+          <span class="pcard-period">Freelance</span>
+        </div>
         <p class="pcard-title">Bio Vajra — Video Content</p>
-        <p class="pcard-desc">Created and edited video reels according to the client's brief and brand specifications. Delivered ready-to-publish short-form content for Instagram.</p>
+        <p class="pcard-desc">Created and edited a series of video reels for the client, tailored to their brief and brand style. Delivered multiple ready-to-publish short-form videos for Instagram.</p>
         <div class="deliverables">
           <p class="deliv-label">What I did</p>
-          <div class="deliv-row"><span class="deliv-dot"></span>Video editing aligned to client brief</div>
-          <div class="deliv-row"><span class="deliv-dot"></span>2 reels delivered and published</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Multiple reels created and edited to client specifications</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Short-form video content adapted for Instagram</div>
         </div>
         <div class="feed-section">
           <p class="feed-label">Work samples — click to play</p>
           <div class="feed-grid">
-            <div class="fthumb" data-isvid="true" data-vid="1x_JfLeec6F5hWJNlYW7QONGoIPNl2RTr"><img src="https://lh3.googleusercontent.com/d/1x_JfLeec6F5hWJNlYW7QONGoIPNl2RTr" alt="" loading="lazy"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-            <div class="fthumb" data-isvid="true" data-vid="1OqGCKQZNIX7OK1KB9K-RvcFiVD_xvgml"><img src="https://lh3.googleusercontent.com/d/1OqGCKQZNIX7OK1KB9K-RvcFiVD_xvgml" alt="" loading="lazy"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="fthumb" data-isvid="true" data-vid="1x_JfLeec6F5hWJNlYW7QONGoIPNl2RTr"><img src="https://drive.google.com/thumbnail?id=1x_JfLeec6F5hWJNlYW7QONGoIPNl2RTr&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="fthumb" data-isvid="true" data-vid="1OqGCKQZNIX7OK1KB9K-RvcFiVD_xvgml"><img src="https://drive.google.com/thumbnail?id=1OqGCKQZNIX7OK1KB9K-RvcFiVD_xvgml&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
           </div>
         </div>
       </div>
@@ -395,19 +464,25 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
     <div class="pcard" data-cat="video"
       data-gal='[]' data-cap="Black Drina Adventure — reel"
       data-isvid="true" data-vids='["1Nf-xZZRhTkqo0RTBgJpIU9IM3Q5MS2E3"]'>
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1wY4u4fQkVNhTEJpIflgHm3HeWUA4bqZZ" alt="" loading="lazy"><span class="pcard-badge">Video Reel</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1wY4u4fQkVNhTEJpIflgHm3HeWUA4bqZZ&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Video Reel</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/blackdrinadventure" target="_blank">@blackdrinadventure ↗</a><span class="pcard-period">Gifted</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/blackdrinadventure" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@blackdrinadventure</span>
+          </a>
+          <span class="pcard-period">Gift</span>
+        </div>
         <p class="pcard-title">Black Drina Adventure</p>
-        <p class="pcard-desc">Edited a reel from a real personal experience at the location — gifted to the brand as a piece of genuine storytelling for an adventure destination.</p>
+        <p class="pcard-desc">I visited Black Drina myself and ended up making a reel from the experience — gave it to them as a gift. Just felt like the kind of place that deserved a proper video.</p>
         <div class="deliverables">
           <p class="deliv-label">What I did</p>
-          <div class="deliv-row"><span class="deliv-dot"></span>Video editing and travel storytelling</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Shot and edited a travel reel from a personal visit</div>
         </div>
         <div class="feed-section">
           <p class="feed-label">Work sample — click to play</p>
           <div class="feed-grid">
-            <div class="fthumb" data-isvid="true" data-vid="1Nf-xZZRhTkqo0RTBgJpIU9IM3Q5MS2E3"><img src="https://lh3.googleusercontent.com/d/1wY4u4fQkVNhTEJpIflgHm3HeWUA4bqZZ" alt="" loading="lazy"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+            <div class="fthumb" data-isvid="true" data-vid="1Nf-xZZRhTkqo0RTBgJpIU9IM3Q5MS2E3"><img src="https://drive.google.com/thumbnail?id=1wY4u4fQkVNhTEJpIflgHm3HeWUA4bqZZ&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><div class="fthumb-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
           </div>
         </div>
       </div>
@@ -415,24 +490,31 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
 
     <!-- SSD -->
     <div class="pcard" data-cat="design"
-      data-gal='["https://lh3.googleusercontent.com/d/1sOTqm0mZrls2UmpPmq1Kvj-p8En_0YZd","https://lh3.googleusercontent.com/d/1vIvu2WLpDW9JKU-zRXnmpWLwTmf8XOzS","https://lh3.googleusercontent.com/d/1zOELU09QLEwk1FPD0T2HJGQTL7n9D75W"]'
-      data-cap="SSD Albania — product catalogue">
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1sOTqm0mZrls2UmpPmq1Kvj-p8En_0YZd" alt="" loading="lazy"><span class="pcard-badge">Graphic Design</span></div>
+      data-gal='["https://drive.google.com/thumbnail?id=1sOTqm0mZrls2UmpPmq1Kvj-p8En_0YZd&sz=w800","https://drive.google.com/thumbnail?id=1vIvu2WLpDW9JKU-zRXnmpWLwTmf8XOzS&sz=w800","https://drive.google.com/thumbnail?id=1zOELU09QLEwk1FPD0T2HJGQTL7n9D75W&sz=w800"]'
+      data-cap="SSD Albania — product catalogues and Instagram posts">
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1sOTqm0mZrls2UmpPmq1Kvj-p8En_0YZd&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Graphic Design</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/ssd_albania" target="_blank">@ssd_albania ↗</a><span class="pcard-period">Freelance</span></div>
-        <p class="pcard-title">SSD Albania — Product Catalogue</p>
-        <p class="pcard-desc">Designed a product catalogue for print and digital distribution.</p>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/ssd_albania" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@ssd_albania</span>
+          </a>
+          <span class="pcard-period">Freelance</span>
+        </div>
+        <p class="pcard-title">SSD Albania — Catalogues & Posts</p>
+        <p class="pcard-desc">Designed multiple product catalogues — one per brand — for both print and digital use. Also prepared Instagram posts according to their content needs.</p>
         <div class="deliverables">
           <p class="deliv-label">What I did</p>
-          <div class="deliv-row"><span class="deliv-dot"></span>Layout and page design</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Multiple product catalogues designed (one per brand)</div>
           <div class="deliv-row"><span class="deliv-dot"></span>Print and digital-ready output (Adobe InDesign)</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Instagram post design according to content needs</div>
         </div>
         <div class="feed-section">
-          <p class="feed-label">Work samples</p>
+          <p class="feed-label">Work samples — click to enlarge</p>
           <div class="feed-grid">
-            <div class="fthumb" data-idx="0"><img src="https://lh3.googleusercontent.com/d/1sOTqm0mZrls2UmpPmq1Kvj-p8En_0YZd" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="1"><img src="https://lh3.googleusercontent.com/d/1vIvu2WLpDW9JKU-zRXnmpWLwTmf8XOzS" alt="" loading="lazy"></div>
-            <div class="fthumb" data-idx="2"><img src="https://lh3.googleusercontent.com/d/1zOELU09QLEwk1FPD0T2HJGQTL7n9D75W" alt="" loading="lazy"></div>
+            <div class="fthumb" data-idx="0"><img src="https://drive.google.com/thumbnail?id=1sOTqm0mZrls2UmpPmq1Kvj-p8En_0YZd&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="1"><img src="https://drive.google.com/thumbnail?id=1vIvu2WLpDW9JKU-zRXnmpWLwTmf8XOzS&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
+            <div class="fthumb" data-idx="2"><img src="https://drive.google.com/thumbnail?id=1zOELU09QLEwk1FPD0T2HJGQTL7n9D75W&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div>
           </div>
         </div>
       </div>
@@ -440,11 +522,17 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
 
     <!-- RELAJ -->
     <div class="pcard" data-cat="design"
-      data-gal='["https://lh3.googleusercontent.com/d/13vq3ric65ueYy-YFTM3qPaO_UswmcdW9"]'
+      data-gal='["https://drive.google.com/thumbnail?id=13vq3ric65ueYy-YFTM3qPaO_UswmcdW9&sz=w800"]'
       data-cap="Bar Restorant Relaj — menu design">
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/13vq3ric65ueYy-YFTM3qPaO_UswmcdW9" alt="" loading="lazy"><span class="pcard-badge">Graphic Design</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=13vq3ric65ueYy-YFTM3qPaO_UswmcdW9&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Graphic Design</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/bar_restorant_piceri_relaj" target="_blank">@bar_restorant_piceri_relaj ↗</a><span class="pcard-period">Freelance</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/bar_restorant_piceri_relaj" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@bar_restorant_piceri_relaj</span>
+          </a>
+          <span class="pcard-period">Freelance</span>
+        </div>
         <p class="pcard-title">Relaj — Menu Design</p>
         <p class="pcard-desc">Designed the full menu for a bar, restaurant, and pizzeria — structured for readability and aligned to the venue's identity.</p>
         <div class="deliverables">
@@ -454,38 +542,50 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
         </div>
         <div class="feed-section">
           <p class="feed-label">Work sample</p>
-          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://lh3.googleusercontent.com/d/13vq3ric65ueYy-YFTM3qPaO_UswmcdW9" alt="" loading="lazy"></div></div>
+          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://drive.google.com/thumbnail?id=13vq3ric65ueYy-YFTM3qPaO_UswmcdW9&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div></div>
         </div>
       </div>
     </div>
 
     <!-- ROCK BLUES -->
     <div class="pcard" data-cat="design"
-      data-gal='["https://lh3.googleusercontent.com/d/139aShIMeAelr3OzVJAkpuxysHNS7Yqoa"]'
+      data-gal='["https://drive.google.com/thumbnail?id=139aShIMeAelr3OzVJAkpuxysHNS7Yqoa&sz=w800"]'
       data-cap="Rock Blues Saranda — event poster">
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/139aShIMeAelr3OzVJAkpuxysHNS7Yqoa" alt="" loading="lazy"><span class="pcard-badge">Graphic Design</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=139aShIMeAelr3OzVJAkpuxysHNS7Yqoa&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Graphic Design</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/rock_blues_saranda" target="_blank">@rock_blues_saranda ↗</a><span class="pcard-period">Freelance</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/rock_blues_saranda" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@rock_blues_saranda</span>
+          </a>
+          <span class="pcard-period">Freelance</span>
+        </div>
         <p class="pcard-title">Rock Blues Saranda — Event Poster</p>
-        <p class="pcard-desc">Event promotion posters for a music venue in Saranda.</p>
+        <p class="pcard-desc">Event promotion posters for a music venue in Saranda, designed for digital and print.</p>
         <div class="deliverables">
           <p class="deliv-label">What I did</p>
-          <div class="deliv-row"><span class="deliv-dot"></span>Event poster design for digital and print</div>
+          <div class="deliv-row"><span class="deliv-dot"></span>Event poster design — digital and print versions</div>
         </div>
         <div class="feed-section">
           <p class="feed-label">Work sample</p>
-          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://lh3.googleusercontent.com/d/139aShIMeAelr3OzVJAkpuxysHNS7Yqoa" alt="" loading="lazy"></div></div>
+          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://drive.google.com/thumbnail?id=139aShIMeAelr3OzVJAkpuxysHNS7Yqoa&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div></div>
         </div>
       </div>
     </div>
 
     <!-- APRICUS -->
     <div class="pcard" data-cat="design"
-      data-gal='["https://lh3.googleusercontent.com/d/1r0Vbgln2Q-njwFVWR1kJVcutbOdCYtgw"]'
+      data-gal='["https://drive.google.com/thumbnail?id=1r0Vbgln2Q-njwFVWR1kJVcutbOdCYtgw&sz=w800"]'
       data-cap="Apricus Luxury Hotels — design project">
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1r0Vbgln2Q-njwFVWR1kJVcutbOdCYtgw" alt="" loading="lazy"><span class="pcard-badge">Graphic Design</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1r0Vbgln2Q-njwFVWR1kJVcutbOdCYtgw&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Graphic Design</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><span class="pcard-handle">Apricus Luxury Hotels</span><span class="pcard-period">Course project · 1st place</span></div>
+        <div class="pcard-meta">
+          <span class="pcard-handle-wrap" style="cursor:default">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle" style="color:var(--text-muted)">Apricus Luxury Hotels</span>
+          </span>
+          <span class="pcard-period">Course project · 1st place</span>
+        </div>
         <p class="pcard-title">Apricus Luxury Hotels</p>
         <p class="pcard-desc">Final project for a graphic design course — awarded 1st place and an internship opportunity. Full visual identity concept for a luxury hospitality brand.</p>
         <div class="deliverables">
@@ -495,18 +595,24 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
         </div>
         <div class="feed-section">
           <p class="feed-label">Work sample</p>
-          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://lh3.googleusercontent.com/d/1r0Vbgln2Q-njwFVWR1kJVcutbOdCYtgw" alt="" loading="lazy"></div></div>
+          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://drive.google.com/thumbnail?id=1r0Vbgln2Q-njwFVWR1kJVcutbOdCYtgw&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div></div>
         </div>
       </div>
     </div>
 
     <!-- PRESTIGE -->
     <div class="pcard" data-cat="brand"
-      data-gal='["https://lh3.googleusercontent.com/d/1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL"]'
+      data-gal='["https://drive.google.com/thumbnail?id=1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL&sz=w800"]'
       data-cap="Prestige Event — logo design">
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL" alt="" loading="lazy"><span class="pcard-badge">Logo Design</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Logo Design</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/prestigeevent.al" target="_blank">@prestigeevent.al ↗</a><span class="pcard-period">Freelance</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/prestigeevent.al" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@prestigeevent.al</span>
+          </a>
+          <span class="pcard-period">Freelance</span>
+        </div>
         <p class="pcard-title">Prestige Event — Logo</p>
         <p class="pcard-desc">Logo design for an event management company.</p>
         <div class="deliverables">
@@ -515,18 +621,24 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
         </div>
         <div class="feed-section">
           <p class="feed-label">Work sample</p>
-          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://lh3.googleusercontent.com/d/1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL" alt="" loading="lazy"></div></div>
+          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://drive.google.com/thumbnail?id=1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div></div>
         </div>
       </div>
     </div>
 
     <!-- BLET -->
     <div class="pcard" data-cat="brand"
-      data-gal='["https://lh3.googleusercontent.com/d/1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF"]'
+      data-gal='["https://drive.google.com/thumbnail?id=1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF&sz=w800"]'
       data-cap="Blet Academy — logo and templates">
-      <div class="pcard-cover"><img src="https://lh3.googleusercontent.com/d/1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF" alt="" loading="lazy"><span class="pcard-badge">Branding</span></div>
+      <div class="pcard-cover"><img src="https://drive.google.com/thumbnail?id=1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF&sz=w800" alt="" loading="lazy" crossorigin="anonymous"><span class="pcard-badge">Branding</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/bletacademy" target="_blank">@bletacademy ↗</a><span class="pcard-period">Freelance</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/bletacademy" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@bletacademy</span>
+          </a>
+          <span class="pcard-period">Freelance</span>
+        </div>
         <p class="pcard-title">Blet Academy — Logo & Templates</p>
         <p class="pcard-desc">Logo design and posting templates for an educational platform's social media presence.</p>
         <div class="deliverables">
@@ -536,16 +648,22 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
         </div>
         <div class="feed-section">
           <p class="feed-label">Work sample</p>
-          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://lh3.googleusercontent.com/d/1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF" alt="" loading="lazy"></div></div>
+          <div class="feed-grid"><div class="fthumb" data-idx="0"><img src="https://drive.google.com/thumbnail?id=1NTyqJjbg0SJSM7NtBL-PKaaTUp5So9kF&sz=w800" alt="" loading="lazy" crossorigin="anonymous"></div></div>
         </div>
       </div>
     </div>
 
     <!-- STUDENTAL -->
     <div class="pcard" data-cat="brand" data-gal='[]' data-cap="Studental — startup brand identity">
-      <div class="pcard-cover" style="background:var(--green);display:flex;align-items:center;justify-content:center"><span style="font-size:2.2rem;font-weight:700;color:rgba(184,150,62,.3);letter-spacing:-.02em">Studental</span><span class="pcard-badge">Startup</span></div>
+      <div class="pcard-cover" style="background:var(--navy);display:flex;align-items:center;justify-content:center"><span style="font-size:2.2rem;font-weight:700;color:rgba(125,184,232,.25);letter-spacing:-.02em">Studental</span><span class="pcard-badge">Startup</span></div>
       <div class="pcard-body">
-        <div class="pcard-meta"><a class="pcard-handle" href="https://www.instagram.com/studental.platform" target="_blank">@studental.platform ↗</a><span class="pcard-period">Ongoing · Early phase</span></div>
+        <div class="pcard-meta">
+          <a class="pcard-handle-wrap" href="https://www.instagram.com/studental.platform" target="_blank">
+            <svg class="pcard-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue-accent)"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="pcard-handle">@studental.platform</span>
+          </a>
+          <span class="pcard-period">Ongoing · Early phase</span>
+        </div>
         <p class="pcard-title">Studental Platform</p>
         <p class="pcard-desc">Personal startup project in its early phase — also the subject of my university thesis at Epoka University.</p>
         <div class="deliverables">
@@ -560,10 +678,11 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
   </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience" class="exp-bg">
-  <p class="sec-label" style="color:var(--gold-light)">Experience</p>
+  <p class="sec-label" style="color:#7DB8E8">Experience</p>
   <h2 class="sec-title" style="color:#fff">Where I've worked.</h2>
-  <p class="sec-sub" style="color:rgba(255,255,255,.4)">Roles that shaped how I think about content, communication, and brand presence.</p>
+  <p class="sec-sub" style="color:rgba(255,255,255,.35)">Roles that shaped how I think about content, communication, and brand presence.</p>
   <div class="exp-grid">
 
     <div class="emp-block">
@@ -572,7 +691,7 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
         <div class="role-cell">
           <p class="role-date">Apr 2025 – Apr 2026</p>
           <p class="role-title">Communication & Administrative Specialist</p>
-          <p class="role-desc">Full social media management across Instagram, LinkedIn, Facebook, WhatsApp, and website. Built brand guideline from scratch. Planned and executed content across educational, event, and project campaigns. Managed event logistics, stationery, invitations, and participant registration. Delivered detailed analytics reports for donors at campaign close.</p>
+          <p class="role-desc">Full social media management across Instagram, LinkedIn, Facebook, WhatsApp, and website. Built brand guideline from scratch. Planned and executed content across educational, event, and project campaigns. Handled full event assistance — from pre-event promotion and branded materials to on-site coordination and post-event follow-up. Delivered analytics reports at campaign close.</p>
         </div>
         <div class="role-cell">
           <p class="role-date">Apr 2025 – Aug 2025</p>
@@ -590,91 +709,88 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
 
     <div class="exp-item">
       <div class="exp-top"><p class="exp-role">GDSC Lead · previously Marketing & Operations Manager</p><span class="exp-date">Nov 2022 – Jul 2024</span></div>
-      <p class="exp-org">Google Developer Student Club · Epoka University · <a href="https://www.instagram.com/gdsc.epoka" target="_blank" style="color:var(--gold-light);text-decoration:none">@gdsc.epoka ↗</a></p>
-      <p class="exp-desc">Joined as Marketing & Operations Manager — managed Instagram, LinkedIn, and Google DSC platform. Organized and assisted all club events, coordinated logistics, visuals, and post-event reports to Google. Selected as GDSC Lead the following year. Co-organized Albania's first DevFest — ~500 attendees, 2 Google speakers, partnerships with the Municipality of Tirana.</p>
+      <p class="exp-org">Google Developer Student Club · Epoka University · <a href="https://www.instagram.com/gdsc.epoka" target="_blank" style="color:#7DB8E8;text-decoration:none">@gdsc.epoka ↗</a></p>
+      <p class="exp-desc">Joined as Marketing & Operations Manager — managed Instagram, LinkedIn, and Google DSC platform. Organized and assisted all club events. Selected as GDSC Lead the following year. Co-organized Albania's first DevFest — 2 international speakers from Google, 5+ Albanian tech experts, cooperation with the Municipality of Tirana, Epoka University, and other institutions.</p>
     </div>
 
     <div class="exp-item">
-      <div class="exp-top"><p class="exp-role">Social Media Manager (Freelance)</p><span class="exp-date">Jun – Nov 2024</span></div>
-      <p class="exp-org">Eagle Invest · <a href="https://www.instagram.com/eagleinvest.al" target="_blank" style="color:var(--gold-light);text-decoration:none">@eagleinvest.al ↗</a></p>
-      <p class="exp-desc">Set up and managed social media from zero. Created visuals, wrote captions, built story highlights, and established the initial content structure and tone of voice for an investment firm.</p>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-top"><p class="exp-role">Freelance Digital Content Specialist</p><span class="exp-date">Ongoing · Remote</span></div>
-      <p class="exp-org">Multiple clients</p>
-      <p class="exp-desc">Video editing, graphic design, logo design, social media management, product catalogues, and brand identity — each project managed from brief to delivery.</p>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-top"><p class="exp-role">Media Operations Volunteer</p><span class="exp-date">May 2022</span></div>
-      <p class="exp-org">UEFA · Tirana</p>
-      <p class="exp-desc">Supported international and national media teams during UEFA press conferences for finalist teams.</p>
+      <div class="exp-top"><p class="exp-role">Social Media Manager</p><span class="exp-date">Jun – Nov 2024 · Freelance</span></div>
+      <p class="exp-org">Eagle Invest · <a href="https://www.instagram.com/eagleinvest.al" target="_blank" style="color:#7DB8E8;text-decoration:none">@eagleinvest.al ↗</a></p>
+      <p class="exp-desc">Set up and managed social media presence from zero for an investment firm — visuals, captions, story highlights, and initial content structure.</p>
     </div>
 
   </div>
 </section>
 
+<!-- CV -->
 <section id="cv">
   <p class="sec-label">CV</p>
   <h2 class="sec-title">Full background.</h2>
-  <p class="sec-sub">A read-only overview of my professional profile. Reach out directly for the full document.</p>
-  <div class="cv-shell">
-    <div class="cv-bar">
-      <div class="cv-dots"><div class="cvd" style="background:#FF5F57"></div><div class="cvd" style="background:#FEBC2E"></div><div class="cvd" style="background:#28C840"></div></div>
-      <span style="font-size:11px;color:var(--text-muted);font-weight:500">Amanda_Peza_CV — Preview only</span>
-      <span class="cv-lock"><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><rect x=".5" y="4.5" width="9" height="7" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M3 4.5V3a2 2 0 0 1 4 0v1.5" stroke="currentColor" stroke-width="1.2"/></svg>View only</span>
-    </div>
-    <div class="cv-inner" oncontextmenu="return false">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap">
-        <div><p class="cv-name">Amanda Peza</p><p class="cv-sub">Social Media Manager & Visual Designer · Tirana · 3+ years across social media management, content creation, brand communication, and graphic design.</p></div>
-        <div style="width:42px;height:42px;border-radius:50%;background:var(--beige-mid);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--gold);flex-shrink:0">AP</div>
+  <p class="sec-sub">Request access to view the full CV — available on demand to hiring teams and collaborators.</p>
+
+  <div style="position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)">
+
+    <!-- BLURRED PREVIEW -->
+    <div style="filter:blur(6px);pointer-events:none;user-select:none;-webkit-user-select:none">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;background:var(--blue-pale);border-bottom:1px solid var(--border)">
+        <div style="display:flex;gap:.4rem"><div style="width:10px;height:10px;border-radius:50%;background:#FF5F57"></div><div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E"></div><div style="width:10px;height:10px;border-radius:50%;background:#28C840"></div></div>
+        <span style="font-size:11px;color:var(--text-muted);font-weight:500">Amanda_Peza_CV.pdf</span>
+        <span style="font-size:11px;color:var(--text-muted)">Access required</span>
       </div>
-      <div class="cv-contacts"><span>Tirana, Albania</span><span>(+355) 685864854</span><span>amandapeza1@gmail.com</span><span>ami.photovideoedit@gmail.com</span><span>linkedin.com/in/amanda-peza-ap</span></div>
-      <div class="cv-rule"></div>
-      <p class="cv-sec">Work Experience</p>
-      <div class="cve"><p class="cve-title">Communication & Administrative Specialist</p><p class="cve-org">Brain Nest Institute</p><p class="cve-date">Apr 2025 – Apr 2026 · Tirana</p><p class="cve-desc">Full social media management, brand guideline creation, content strategy, campaign management, event communication, donor analytics reporting.</p></div>
-      <div class="cve"><p class="cve-title">Learning Coach (Part-time)</p><p class="cve-org">TUMO Tirana</p><p class="cve-date">Mar 2024 – Present</p></div>
-      <div class="cve"><p class="cve-title">GDSC Lead · Marketing & Operations Manager</p><p class="cve-org">Google Developer Student Club · Epoka University</p><p class="cve-date">Nov 2022 – Jul 2024</p><p class="cve-desc">Full social management, event organization, promoted to GDSC Lead. Co-organized first DevFest Albania.</p></div>
-      <div class="cve"><p class="cve-title">Freelance Digital Content Specialist</p><p class="cve-org">Remote · Multiple clients</p><p class="cve-date">Ongoing</p></div>
-      <div class="cve"><p class="cve-title">Executive Assistant</p><p class="cve-org">Brain Nest Institute</p><p class="cve-date">Apr – Aug 2025</p></div>
-      <div class="cve"><p class="cve-title">Hospitality Associate (Work & Travel USA)</p><p class="cve-org">Bistro 14 · New Jersey</p><p class="cve-date">Jul – Sep 2023</p></div>
-      <div class="cv-rule"></div>
-      <p class="cv-sec">Education</p>
-      <div class="cve"><p class="cve-title">BSc Business Informatics — Epoka University</p><p class="cve-date">2021–2023 · GPA 3.76/4.00 · High Honors · Thesis: Studental Platform</p></div>
-      <div class="cve"><p class="cve-title">Digital Marketing Masterclass — Digital Academy Albania</p><p class="cve-date">Jan 2025</p></div>
-      <div class="cve"><p class="cve-title">Fundamentals of Digital Marketing — Google Digital Garage</p><p class="cve-date">May 2023</p></div>
-      <div class="cve"><p class="cve-title">Graphic Design — Dominusoft · Adobe Ps, Ai, Id</p><p class="cve-date">Oct 2022</p></div>
-      <div class="cv-rule"></div>
-      <p class="cv-sec">Skills</p>
-      <div class="cv-chips"><span class="cvc">Social Media Management</span><span class="cvc">Content Strategy</span><span class="cvc">Video Editing</span><span class="cvc">Adobe Photoshop</span><span class="cvc">Illustrator</span><span class="cvc">InDesign</span><span class="cvc">Canva</span><span class="cvc">Brand Identity</span><span class="cvc">Copywriting</span><span class="cvc">Analytics & Reporting</span><span class="cvc">Event Communication</span><span class="cvc">Campaign Management</span><span class="cvc">English B2</span></div>
-      <div class="cv-rule"></div>
-      <p class="cv-sec">Honours</p>
-      <div class="cve"><p class="cve-desc">2nd place · B4Students Business Challenge (BALFIN Group) · 2024</p><p class="cve-desc" style="margin-top:.25rem">1st place · Graphic Design Final Project — Apricus Luxury Hotels · Internship award</p><p class="cve-desc" style="margin-top:.25rem">Co-organizer · First DevFest Albania · ~500 attendees · 2023</p><p class="cve-desc" style="margin-top:.25rem">Erasmus+ Training of Trainers · Italy 2025 · Looking for Nemo Project</p></div>
+      <div style="padding:2.5rem 3rem;background:var(--white)">
+        <p style="font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:.9rem">Amanda Peza</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.3rem 1.25rem;margin-bottom:1.5rem"><span style="font-size:.72rem;color:var(--text-muted)">Tirana, Albania</span><span style="font-size:.72rem;color:var(--text-muted)">amandapeza1@gmail.com</span><span style="font-size:.72rem;color:var(--text-muted)">linkedin.com/in/amanda-peza-ap</span></div>
+        <div style="height:1px;background:var(--border);margin:1.25rem 0"></div>
+        <p style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:.85rem">Work Experience</p>
+        <div style="margin-bottom:1rem"><p style="font-size:.83rem;font-weight:700;color:var(--navy)">Communication & Administrative Specialist</p><p style="font-size:.73rem;color:var(--blue-accent)">Brain Nest Institute</p><p style="font-size:.69rem;color:var(--text-muted)">Apr 2025 – Apr 2026 · Tirana</p></div>
+        <div style="margin-bottom:1rem"><p style="font-size:.83rem;font-weight:700;color:var(--navy)">Learning Coach (Part-time)</p><p style="font-size:.73rem;color:var(--blue-accent)">TUMO Tirana</p><p style="font-size:.69rem;color:var(--text-muted)">Mar 2024 – Present</p></div>
+        <div style="margin-bottom:1rem"><p style="font-size:.83rem;font-weight:700;color:var(--navy)">GDSC Lead · Marketing & Operations Manager</p><p style="font-size:.73rem;color:var(--blue-accent)">Google Developer Student Club · Epoka University</p><p style="font-size:.69rem;color:var(--text-muted)">Nov 2022 – Jul 2024</p></div>
+        <div style="height:1px;background:var(--border);margin:1.25rem 0"></div>
+        <p style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:.85rem">Education</p>
+        <div style="margin-bottom:1rem"><p style="font-size:.83rem;font-weight:700;color:var(--navy)">BSc in Business Informatics</p><p style="font-size:.73rem;color:var(--blue-accent)">Epoka University</p><p style="font-size:.69rem;color:var(--text-muted)">2021–2023 · GPA 3.76/4.00 · High Honors</p></div>
+        <div style="height:1px;background:var(--border);margin:1.25rem 0"></div>
+        <p style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-accent);margin-bottom:.85rem">Skills</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.3rem"><span style="font-size:.69rem;border:1px solid var(--border);padding:.18rem .55rem;border-radius:99px;color:var(--text-mid);background:var(--blue-faint)">Social Media Management</span><span style="font-size:.69rem;border:1px solid var(--border);padding:.18rem .55rem;border-radius:99px;color:var(--text-mid);background:var(--blue-faint)">Content Strategy</span><span style="font-size:.69rem;border:1px solid var(--border);padding:.18rem .55rem;border-radius:99px;color:var(--text-mid);background:var(--blue-faint)">Video Editing</span><span style="font-size:.69rem;border:1px solid var(--border);padding:.18rem .55rem;border-radius:99px;color:var(--text-mid);background:var(--blue-faint)">Adobe Suite</span><span style="font-size:.69rem;border:1px solid var(--border);padding:.18rem .55rem;border-radius:99px;color:var(--text-mid);background:var(--blue-faint)">Brand Identity</span><span style="font-size:.69rem;border:1px solid var(--border);padding:.18rem .55rem;border-radius:99px;color:var(--text-mid);background:var(--blue-faint)">Analytics & Reporting</span></div>
+      </div>
     </div>
-    <div class="cv-foot">Read-only preview · Contact Amanda directly for the full document</div>
+
+    <!-- GATE OVERLAY -->
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(13,27,42,.55);backdrop-filter:blur(2px);gap:1.25rem;padding:2rem;text-align:center">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center">
+        <svg width="22" height="26" viewBox="0 0 22 26" fill="none"><rect x="1" y="10" width="20" height="15" rx="3" stroke="white" stroke-width="1.8"/><path d="M6 10V7a5 5 0 0 1 10 0v3" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <p style="font-size:1rem;font-weight:700;color:#fff;margin-bottom:.4rem">CV access on request</p>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:300px">Send an email to request the full CV. You'll receive a link to view and download it directly.</p>
+      </div>
+      <a href="mailto:amandapeza1@gmail.com?subject=CV Request — Amanda Peza&body=Hi Amanda, I would like to request access to your CV." style="display:inline-flex;align-items:center;gap:.6rem;background:var(--blue-accent);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;text-decoration:none;padding:.8rem 1.75rem;border-radius:99px;transition:background .2s">
+        <svg width="14" height="12" viewBox="0 0 14 12" fill="none"><rect x=".5" y=".5" width="13" height="11" rx="1.5" stroke="white" stroke-width="1.2"/><path d="M1 2l6 4.5L13 2" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Request CV
+      </a>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.3)">amandapeza1@gmail.com</p>
+    </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="contact-bg">
   <div class="contact-wrap">
     <div>
-      <p class="sec-label" style="color:var(--gold-light)">Contact</p>
+      <p class="sec-label" style="color:#7DB8E8">Contact</p>
       <h2 class="contact-h">Open to new<br><em>opportunities.</em></h2>
       <p class="contact-sub">Available for full-time and freelance roles in social media management and content creation. Based in Tirana — open to remote collaboration.</p>
     </div>
     <div class="contact-items">
       <div class="contact-item"><p class="contact-lbl">Email</p><a class="contact-val" href="mailto:amandapeza1@gmail.com">amandapeza1@gmail.com</a></div>
-      <div class="contact-item"><p class="contact-lbl">Email (work)</p><a class="contact-val" href="mailto:ami.photovideoedit@gmail.com">ami.photovideoedit@gmail.com</a></div>
-      <div class="contact-item"><p class="contact-lbl">Phone</p><span class="contact-val">(+355) 685864854</span></div>
       <div class="contact-item"><p class="contact-lbl">LinkedIn</p><a class="contact-val" href="https://www.linkedin.com/in/amanda-peza-ap/" target="_blank">linkedin.com/in/amanda-peza-ap</a></div>
-      <div class="contact-item"><p class="contact-lbl">Work samples</p><a class="contact-val" href="https://drive.google.com/drive/folders/1bm5HOQV5-KcO5udoXxmU9KYyblxrGAp_" target="_blank">View Drive folder ↗</a></div>
+      <div class="contact-item"><p class="contact-lbl">Location</p><span class="contact-val">Tirana, Albania</span></div>
     </div>
   </div>
 </section>
 
 <footer><p>© 2026 Amanda Peza</p><p>Tirana, Albania</p></footer>
 
+<!-- LIGHTBOX -->
 <div class="lb" id="lb">
   <div class="lb-box">
     <button class="lb-x" id="lbX">✕</button>
@@ -686,6 +802,7 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
 </div>
 
 <script>
+// FILTER
 document.querySelectorAll('.fbtn').forEach(b=>{
   b.addEventListener('click',()=>{
     document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
@@ -695,14 +812,16 @@ document.querySelectorAll('.fbtn').forEach(b=>{
   });
 });
 
+// LIGHTBOX
 const lb=document.getElementById('lb'),lbMedia=document.getElementById('lbMedia'),lbCap=document.getElementById('lbCap');
 let gal=[],vids=[],idx=0,isVid=false;
 
-function open(gallery,caption,isVideo,videoIds,start=0){
-  gal=gallery;vids=videoIds;isVid=isVideo;idx=start;lbCap.textContent=caption||'';
+function openLB(gallery,caption,isVideo,videoIds,start=0){
+  gal=gallery;vids=videoIds;isVid=isVideo;idx=start;
+  lbCap.textContent=caption||'';
   render();lb.classList.add('open');document.body.style.overflow='hidden';
 }
-function close(){lb.classList.remove('open');lbMedia.innerHTML='';document.body.style.overflow='';}
+function closeLB(){lb.classList.remove('open');lbMedia.innerHTML='';document.body.style.overflow='';}
 function render(){
   lbMedia.innerHTML='';
   const len=isVid?vids.length:gal.length;
@@ -715,35 +834,63 @@ function render(){
     iframe.allow='autoplay';
     lbMedia.appendChild(iframe);
   } else if(gal.length){
-    const img=document.createElement('img');img.src=gal[idx];lbMedia.appendChild(img);
+    const img=document.createElement('img');
+    img.src=gal[idx];
+    img.alt='';
+    lbMedia.appendChild(img);
   }
 }
 
 document.querySelectorAll('.pcard').forEach(card=>{
-  card.querySelector('.pcard-cover').addEventListener('click',()=>{
-    open(JSON.parse(card.dataset.gal||'[]'),card.dataset.cap||'',card.dataset.isvid==='true',JSON.parse(card.dataset.vids||'[]'),0);
-  });
+  const cover=card.querySelector('.pcard-cover');
+  if(cover){
+    cover.addEventListener('click',()=>{
+      const g=JSON.parse(card.dataset.gal||'[]');
+      const v=JSON.parse(card.dataset.vids||'[]');
+      const iv=card.dataset.isvid==='true';
+      openLB(g,card.dataset.cap||'',iv,v,0);
+    });
+  }
   card.querySelectorAll('.fthumb').forEach((t,i)=>{
     t.addEventListener('click',e=>{
       e.stopPropagation();
       if(t.dataset.isvid==='true'){
-        open([],t.dataset.vid||'',true,[t.dataset.vid],0);
+        openLB([],lbCap.textContent,true,[t.dataset.vid],0);
       } else {
-        open(JSON.parse(card.dataset.gal||'[]'),card.dataset.cap||'',false,[],parseInt(t.dataset.idx||i)||0);
+        const g=JSON.parse(card.dataset.gal||'[]');
+        openLB(g,card.dataset.cap||'',false,[],parseInt(t.dataset.idx??i)||0);
       }
     });
   });
 });
 
-document.getElementById('lbX').onclick=close;
-lb.addEventListener('click',e=>{if(e.target===lb)close();});
-document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();const l=isVid?vids.length:gal.length;idx=(idx-1+l)%l;render();});
-document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();const l=isVid?vids.length:gal.length;idx=(idx+1)%l;render();});
-document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();if(e.key==='ArrowRight')document.getElementById('lbNext').click();});
+document.getElementById('lbX').onclick=closeLB;
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB();});
+document.getElementById('lbPrev').addEventListener('click',e=>{
+  e.stopPropagation();
+  const l=isVid?vids.length:gal.length;
+  if(!l)return;idx=(idx-1+l)%l;render();
+});
+document.getElementById('lbNext').addEventListener('click',e=>{
+  e.stopPropagation();
+  const l=isVid?vids.length:gal.length;
+  if(!l)return;idx=(idx+1)%l;render();
+});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLB();
+  if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();
+  if(e.key==='ArrowRight')document.getElementById('lbNext').click();
+});
 
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='none';}}),{threshold:0.07});
+// SCROLL FADE
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='none';}
+}),{threshold:0.07});
 document.querySelectorAll('.pcard,.exp-item,.emp-block,.skill-item,.hstat').forEach(el=>{
-  el.style.opacity='0';el.style.transform='translateY(14px)';el.style.transition='opacity .55s ease,transform .55s ease';obs.observe(el);
+  el.style.opacity='0';el.style.transform='translateY(14px)';
+  el.style.transition='opacity .55s ease,transform .55s ease';
+  obs.observe(el);
 });
 </script>
 </body>
