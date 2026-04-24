@@ -722,6 +722,208 @@ footer p{font-size:.71rem;color:rgba(255,255,255,.18);letter-spacing:.04em}
   </div>
 </section>
 
+<!-- PHOTO CAROUSEL -->
+<section style="padding:0;background:var(--navy);overflow:hidden">
+  <div style="padding:3.5rem 3rem 1.5rem">
+    <p class="sec-label" style="color:#7DB8E8">Gallery</p>
+    <h2 class="sec-title" style="color:#fff;margin-bottom:0">A glimpse of the work.</h2>
+  </div>
+
+  <div style="position:relative">
+    <!-- Track -->
+    <div id="carousel" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:1.5rem 3rem 2.5rem;cursor:grab;user-select:none">
+
+      <!-- PLACEHOLDER SLIDES — replace src with your asset paths once uploaded -->
+      <div class="cslide" data-idx="0">
+        <img src="https://drive.google.com/thumbnail?id=1zxd6pXKsrLun0kSrn8Ju-kzq2uuwB6pD&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="1">
+        <img src="https://drive.google.com/thumbnail?id=11uO7IxJWlZzBtj5H7MImzRn2CdFaXjtI&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="2">
+        <img src="https://drive.google.com/thumbnail?id=1ZyGWxFnJum_Z-c9TFS3MsoFb55Y5Yh4Z&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="3">
+        <img src="https://drive.google.com/thumbnail?id=1gQCIJTNbJxEupZOKUnHVFY1FgYGtHraQ&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="4">
+        <img src="https://drive.google.com/thumbnail?id=1fozfh2FBO-0ylaEYn68mR3g1gaDizfPJ&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="5">
+        <img src="https://drive.google.com/thumbnail?id=12G4LfEfHjDm0XCU1_1WvmNHAtAIJlem1&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="6">
+        <img src="https://drive.google.com/thumbnail?id=1mqbu0-UUUPpWVAOFffVNU2VymFnDkV8I&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="7">
+        <img src="https://drive.google.com/thumbnail?id=1BAMLce0qw3HhsHMlLxWvRXtvizZ2tKxL&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="8">
+        <img src="https://drive.google.com/thumbnail?id=1IxDNcAMLuGs3ktHJAGZpu7uAixkQIOW-&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="9">
+        <img src="https://drive.google.com/thumbnail?id=1sOTqm0mZrls2UmpPmq1Kvj-p8En_0YZd&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="10">
+        <img src="https://drive.google.com/thumbnail?id=13vq3ric65ueYy-YFTM3qPaO_UswmcdW9&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="11">
+        <img src="https://drive.google.com/thumbnail?id=139aShIMeAelr3OzVJAkpuxysHNS7Yqoa&sz=w800" alt="Work sample">
+      </div>
+      <div class="cslide" data-idx="12">
+        <img src="https://drive.google.com/thumbnail?id=1r0Vbgln2Q-njwFVWR1kJVcutbOdCYtgw&sz=w800" alt="Work sample">
+      </div>
+    </div>
+
+    <!-- Fade edges -->
+    <div style="position:absolute;top:0;left:0;bottom:0;width:80px;background:linear-gradient(to right,var(--navy),transparent);pointer-events:none"></div>
+    <div style="position:absolute;top:0;right:0;bottom:0;width:80px;background:linear-gradient(to left,var(--navy),transparent);pointer-events:none"></div>
+  </div>
+
+  <!-- Dots -->
+  <div id="carouselDots" style="display:flex;justify-content:center;gap:.5rem;padding-bottom:3rem"></div>
+</section>
+
+<style>
+#carousel{-ms-overflow-style:none}
+#carousel::-webkit-scrollbar{display:none}
+.cslide{
+  flex-shrink:0;
+  width:340px;
+  height:420px;
+  border-radius:12px;
+  overflow:hidden;
+  scroll-snap-align:center;
+  position:relative;
+  transition:transform .5s cubic-bezier(.25,.46,.45,.94),box-shadow .5s;
+  transform:scale(.88);
+  opacity:.55;
+  cursor:pointer;
+}
+.cslide.active{
+  transform:scale(1);
+  opacity:1;
+  box-shadow:0 24px 64px rgba(0,0,0,.5);
+}
+.cslide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s cubic-bezier(.25,.46,.45,.94);
+}
+.cslide.active img{
+  transform:scale(1.06);
+}
+.cdot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(255,255,255,.2);
+  border:none;cursor:pointer;padding:0;
+  transition:background .3s,transform .3s;
+}
+.cdot.on{background:#7DB8E8;transform:scale(1.4)}
+@media(max-width:700px){.cslide{width:260px;height:320px}}
+</style>
+
+<script>
+(function(){
+  const track = document.getElementById('carousel');
+  const slides = Array.from(track.querySelectorAll('.cslide'));
+  const dotsWrap = document.getElementById('carouselDots');
+  let current = 0;
+  let autoTimer;
+  let isDragging = false, startX = 0, scrollStart = 0;
+
+  // Build dots
+  slides.forEach((_,i)=>{
+    const d = document.createElement('button');
+    d.className = 'cdot' + (i===0?' on':'');
+    d.addEventListener('click',()=>goTo(i));
+    dotsWrap.appendChild(d);
+  });
+
+  function setActive(idx){
+    current = idx;
+    slides.forEach((s,i)=>s.classList.toggle('active', i===idx));
+    dotsWrap.querySelectorAll('.cdot').forEach((d,i)=>d.classList.toggle('on',i===idx));
+  }
+
+  function goTo(idx){
+    const slide = slides[idx];
+    const trackRect = track.getBoundingClientRect();
+    const slideRect = slide.getBoundingClientRect();
+    const offset = slideRect.left - trackRect.left - (trackRect.width/2) + (slideRect.width/2);
+    track.scrollBy({left: offset, behavior:'smooth'});
+    setActive(idx);
+  }
+
+  function next(){
+    goTo((current+1) % slides.length);
+  }
+
+  function startAuto(){
+    clearInterval(autoTimer);
+    autoTimer = setInterval(next, 3000);
+  }
+
+  // Scroll-based active detection
+  track.addEventListener('scroll',()=>{
+    const center = track.scrollLeft + track.clientWidth/2;
+    let closest = 0, minDist = Infinity;
+    slides.forEach((s,i)=>{
+      const dist = Math.abs(s.offsetLeft + s.offsetWidth/2 - track.scrollLeft - track.clientWidth/2);
+      if(dist < minDist){minDist=dist;closest=i;}
+    });
+    if(closest !== current) setActive(closest);
+  }, {passive:true});
+
+  // Click to open lightbox
+  slides.forEach((s,i)=>{
+    s.addEventListener('click',()=>{
+      if(isDragging) return;
+      const img = s.querySelector('img');
+      if(img) openLB([img.src],'Gallery',false,[],0);
+    });
+  });
+
+  // Drag to scroll
+  track.addEventListener('mousedown',e=>{
+    isDragging=false;
+    startX=e.pageX;
+    scrollStart=track.scrollLeft;
+    track.style.cursor='grabbing';
+    clearInterval(autoTimer);
+  });
+  track.addEventListener('mousemove',e=>{
+    if(!e.buttons) return;
+    const dx = e.pageX - startX;
+    if(Math.abs(dx)>5) isDragging=true;
+    track.scrollLeft = scrollStart - dx;
+  });
+  track.addEventListener('mouseup',()=>{
+    track.style.cursor='grab';
+    setTimeout(()=>{isDragging=false;},50);
+    startAuto();
+  });
+  track.addEventListener('mouseleave',()=>{
+    track.style.cursor='grab';
+    startAuto();
+  });
+
+  // Pause on hover
+  track.addEventListener('mouseenter',()=>clearInterval(autoTimer));
+  track.addEventListener('mouseleave',startAuto);
+
+  // Init
+  setActive(0);
+  // Scroll to center first slide on load
+  setTimeout(()=>{
+    goTo(0);
+    startAuto();
+  }, 300);
+})();
+</script>
+
 <!-- CV -->
 <section id="cv">
   <p class="sec-label">CV</p>
